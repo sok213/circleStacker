@@ -1,0 +1,1 @@
+A game in which you must stack the colors on top of each other on the circular map.
