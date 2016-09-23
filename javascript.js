@@ -1,11 +1,17 @@
-var canvas = document.getElementById('gameCanvas');
-var ctx = canvas.getContext('2d');
-var count = 0;
+// Context variables
+var canvas = document.getElementById('gameCanvas'),
+ctx = canvas.getContext('2d'),
+count = 0;
 
+// Layer variables
 var a1 = false,
-	b1 = false;
+	b1 = false,
+	lock1 = false;
 
-var lock1 = false;
+// Asset variables
+var tapSound = document.createElement('AUDIO');
+
+tapSound.src = "assets/attack.mp3";
 
 // Disables anti-aliasing for sharp sprites.
 ctx.imageSmoothingEnabled = false;
@@ -21,6 +27,16 @@ function drawCircle(radiusLevel) {
 	var centerX = canvas.width / 2,
 		centerY = canvas.height / 2,
 		radius = centerY / radiusLevel;
+
+	// Detects if player pressed the spacebar button.
+	addEventListener('keypress', function(e) {
+		if(e.keyCode == 32) {
+			if(lock1 === false) {
+				tapSound.play();
+				lock1 = true;
+			}
+		}
+	}, false);
 
 	function generateHalfCircle(startPoint, endPoint, onOff) {
 		ctx.beginPath();
@@ -58,6 +74,12 @@ function drawCircle(radiusLevel) {
 
 		// Side B
 		generateHalfCircle(1.5, 0.5, b1);
+	} else if(a1 === true) {
+		generateHalfCircle(1.5, 0.5, false);
+		generateHalfCircle(0.5, 1.5, true);
+	} else {
+		generateHalfCircle(1.5, 0.5, true);
+		generateHalfCircle(0.5, 1.5, false);
 	}
 
 	// Center circle
@@ -85,16 +107,18 @@ function runGame() {
 
 	// Custom interval
 	if(count == 20) {
-		if(a1 === false) {
-			b1 = false;
-			a1 = true;
-		} else {
-			b1 = true;
-			a1 = false;
+		if(lock1 === false) {
+			// Layer #1
+			if(a1 === false) {
+				b1 = false;
+				a1 = true;
+			} else {
+				b1 = true;
+				a1 = false;
+			}
+		count = 0;
 		}
-	count = 0;
 	}
-	console.log(a1);
 	requestAnimationFrame(runGame);
 }
 
