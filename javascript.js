@@ -47,7 +47,6 @@ function drawCircle(radiusLevel) {
 	addEventListener('keydown', function(e) {
 		if(e.keyCode == 32 && pauseEvent === false) {
 			if(lock1 === false) {
-				console.log('shit'); 
 				tapSound.play();
 				lock1 = true;
 				pauseEvent = true;
@@ -55,7 +54,6 @@ function drawCircle(radiusLevel) {
 					pauseEvent = false;
 				}, 300);
 			} else if(lock2 === false && lock1 === true && pauseEvent === false) {
-				console.log("FUCK");
 				tapSound.play();
 				lock2 = true;
 				pauseEvent = true;
@@ -257,7 +255,6 @@ function runGame() {
 		b1 === true && a2 === true && lock2 === true
 	) {
 		gameOver = true;
-		console.log('Game Over.');
 	}
 
 	// Game win rules
@@ -270,7 +267,6 @@ function runGame() {
 		b3 === true && b1 === true && lock3 === true)
 	) {
 		levelComplete = true;
-		console.log("Level Completed!");
 	} 
 
 	if(levelComplete === false && gameOver === false) {
@@ -297,7 +293,6 @@ function runGame() {
 
 addEventListener("keydown", function(e) {
 	if(e.keyCode == 32 && gameOver === true || levelComplete === true) {
-		console.log('game restarted');
 	 	// Clear the canvas
         ctx.fillStyle = "#000000";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
