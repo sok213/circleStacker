@@ -44,7 +44,7 @@ function drawCircle(radiusLevel) {
 	radius = centerY / radiusLevel;
 
 	// Detects if player pressed the spacebar button.
-	addEventListener('keyup', function(e) {
+	addEventListener('keydown', function(e) {
 		if(e.keyCode == 32 && pauseEvent === false) {
 			if(lock1 === false) {
 				tapSound.play();
@@ -291,7 +291,7 @@ function runGame() {
 	}
 }
 
-addEventListener("keyup", function(e) {
+addEventListener("keydown", function(e) {
 	if(e.keyCode == 32 && gameOver === true || levelComplete === true) {
 	 	// Clear the canvas
         ctx.fillStyle = "#000000";
