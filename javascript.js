@@ -192,7 +192,7 @@ function drawCircle(radiusLevel) {
 
 function center() {
 	ctx.beginPath();
-	ctx.arc(window.innerWidth/2, window.innerHeight/2, 60, 0, 2 * Math.PI, false);
+	ctx.arc(canvas.width/2, canvas.height/2, 60, 0, 2 * Math.PI, false);
 	ctx.fillStyle = "rgb(98, 24, 154)";
 	ctx.fill();
 	ctx.lineWidth = 3;

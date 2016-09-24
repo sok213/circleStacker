@@ -3,11 +3,11 @@
   padding: 0; }
 
 body, html {
-  height: 100%; }
+  height: 100%;
+  background-color: black; }
 
 #gameCanvas {
   position: absolute;
-
   background-color: black; }
 
 /*# sourceMappingURL=style.css.map */
