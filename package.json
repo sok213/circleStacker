@@ -1,0 +1,23 @@
+{
+  "name": "circlestacker",
+  "version": "1.0.0",
+  "description": "A game based on stacking stuff",
+  "main": "javascript.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sok213/circleStacker.git"
+  },
+  "author": "sophanarith sok",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sok213/circleStacker/issues"
+  },
+  "homepage": "https://github.com/sok213/circleStacker#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
