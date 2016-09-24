@@ -278,16 +278,16 @@ function runGame() {
 		ctx.textAlign = "center";
 		ctx.textBaseline = "top";
 		ctx.fillText("LEVEL COMPLETE!", canvas.width / 2, 60);
-		ctx.fillText("(Press SPACEBAR to play again.)", canvas.width / 2, 90);
+		ctx.fillText("(Press spacebar to play again.)", canvas.width / 2, 90);
 	} else {
 		gameOverSound.play();
-		ctx.fillStyle = "rgb(0, 255, 0)";
+		ctx.fillStyle = "rgb(230, 0, 0)";
 		ctx.font = "24px Helvetica";
 		ctx.textAlign = "center";
 		ctx.textBaseline = "top";
 		ctx.fillText("Game Over!", canvas.width / 2, 60);
 		ctx.font = "24px Helvetica";
-		ctx.fillText("(Press SPACEBAR to try again.)", canvas.width / 2, 90);
+		ctx.fillText("(Press spacebar to try again.)", canvas.width / 2, 90);
 	}
 }
 
