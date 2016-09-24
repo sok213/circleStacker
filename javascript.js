@@ -245,7 +245,7 @@ function runGame() {
 		} else if(lock2 === false) {
 			count = 5;
 		} else {
-			count = 10;
+			count = 9;
 		}
 	}
 
