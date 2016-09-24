@@ -22,10 +22,12 @@ lock3 = false;
 
 // Asset variables
 var tapSound = document.createElement('AUDIO'),
-winSound = document.createElement('AUDIO');
+winSound = document.createElement('AUDIO'),
+gameOverSound = document.createElement('AUDIO');
 
 tapSound.src = "assets/attack.mp3";
 winSound.src = "assets/levelup.mp3";
+gameOverSound.src = "assets/gameover.mp3";
 
 // Disables anti-aliasing for sharp sprites.
 ctx.imageSmoothingEnabled = false;
@@ -243,7 +245,7 @@ function runGame() {
 		} else if(lock2 === false) {
 			count = 5;
 		} else {
-			count = 6;
+			count = 10;
 		}
 	}
 
@@ -280,9 +282,9 @@ function runGame() {
 		ctx.textAlign = "center";
 		ctx.textBaseline = "top";
 		ctx.fillText("LEVEL COMPLETE!", canvas.width / 2, 60);
-		ctx.fillText("(Press SPACEBAR to try again.)", canvas.width / 2, 90);
+		ctx.fillText("(Press SPACEBAR to play again.)", canvas.width / 2, 90);
 	} else {
-
+		gameOverSound.play();
 		ctx.fillStyle = "rgb(0, 255, 0)";
 		ctx.font = "24px Helvetica";
 		ctx.textAlign = "center";
