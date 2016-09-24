@@ -239,15 +239,15 @@ function runGame() {
 		}
 
 		if(lock1 === false) {
-			count = 0;
-		} else if(lock2 === false) {
 			count = 5;
+		} else if(lock2 === false) {
+			count = 10;
 		} else {
-			count = 9;
+			count = 13;
 		}
 	}
 
-	// Game over rules
+	// Game-over rules
 	if(
 		a1 === true && b2 === true && lock2 === true || 
 		a2 === true && b3 === true && lock3 === true || 
